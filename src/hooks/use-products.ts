@@ -1,0 +1,20 @@
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { productService } from "@/services/product-service";
+
+export const useProductsQuery = () => {
+  const { getProducts } = productService();
+  return useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+};
+
+export const useCreateProductMutation = () => {
+  const queryClient = useQueryClient();
+  const { createProduct } = productService();
+  
+  return useMutation({
+    mutationFn: async (data: any) => createProduct(data),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["products"] }),
+  });
+};
