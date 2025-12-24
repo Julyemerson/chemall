@@ -65,11 +65,11 @@ export function CartPage() {
   );
 }
 
-function CartItem({ name, cas, price, qty }: any) {
+function CartItem({ name, cas, price, qty, img }: any) {
   return (
     <Card className="p-4 flex items-center justify-between hover:border-primary/20 transition-colors">
       <div className="flex items-center gap-4">
-        <div className="w-16 h-16 bg-muted rounded-md border" />
+        <img src={img} className="w-16 h-16 rounded-md border" />
         <div>
           <p className="font-bold text-foreground">{name}</p>
           <p className="text-xs text-muted-foreground font-mono">{cas}</p>
