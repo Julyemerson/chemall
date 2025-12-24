@@ -7,6 +7,8 @@ import { PublicLayout } from './routes/public/__public';
 import { AdminLayout } from './routes/admin/__admin';
 import { CartPage } from './routes/public/cart-page';
 import { NewClient } from './routes/admin/new-client';
+import { LoginPage } from './routes/public/login-page';
+import { RegisterPage } from './routes/public/register-page';
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,19 @@ const indexRoute = createRoute({
   path: '/',
   component: HomePage, 
 });
+
+const loginRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/login',
+  component: LoginPage,
+});
+
+const registerRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/register',
+  component: RegisterPage,
+});
+
 
 const catalogRoute = createRoute({
   getParentRoute: () => publicLayoutRoute,
@@ -57,7 +72,7 @@ const adminClientsRoute = createRoute({
 });
 
 const routeTree = rootRoute.addChildren([
- publicLayoutRoute.addChildren([indexRoute, catalogRoute, cartRoute]),
+ publicLayoutRoute.addChildren([indexRoute, catalogRoute, cartRoute, loginRoute, registerRoute]),
   adminLayoutRoute.addChildren([adminProductsRoute, adminClientsRoute]),
 ]);
 const router = createRouter({ 
