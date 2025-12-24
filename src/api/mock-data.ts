@@ -3,6 +3,11 @@ import imgAcidos from "../assets/imgs/categories/acidos.png";
 import imgBases from "../assets/imgs/categories/bases.png";
 import imgReagentes from "../assets/imgs/categories/reagentes.png";
 
+import AcidoCloridricoImg from "../assets/imgs/products/ácido-cloridrico.jpeg";
+import HidroxidoSodioImg from "../assets/imgs/products/hidroxido-sodio.png";
+
+
+
 export const MOCK_CATEGORIES = [
   { id: 1, title: "Solventes", desc: "Ampla gama de solventes para diversas aplicações.", img: imgSolventes },
   { id: 2, title: "Ácidos", desc: "Ácidos de alta pureza para laboratório e indústria.", img: imgAcidos },
@@ -19,6 +24,6 @@ export const MOCK_PRODUCTS = [
 ];
 
 export const MOCK_CART = [
-  { id: 1, productId: 5, name: "Ácido Clorídrico (HCl)", cas: "#AC12345", price: 50, qty: 2 },
-  { id: 2, productId: 3, name: "Hidróxido de Sódio (NaOH)", cas: "#HS67890", price: 75, qty: 1 },
+  { id: 1, productId: 5, name: "Ácido Clorídrico (HCl)", cas: "#AC12345", img: AcidoCloridricoImg, price: 50, qty: 2 },
+  { id: 2, productId: 3, name: "Hidróxido de Sódio (NaOH)", cas: "#HS67890", img: HidroxidoSodioImg, price: 75, qty: 1 },
 ];
